@@ -2,73 +2,66 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+import "bootstrap/dist/css/bootstrap.min.css"
+import 'bootstrap';
 
 import "./header.css"
 //<!-- https://codepen.io/anon/pen/GJWOBV -->
 const Header = ({ logo, siteTitle }) => (
   <header
     style={{
-      background: `#E60B0F`,
       marginBottom: `1.50 rem`,
     }}
   >
-    
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <div class="navigation-container">
-          <div id="navigation-logo">
-            <Link to="/" >
-              <StaticImage
-                src="../images/logo-icon.png"
-                width={300}
-                quality={95}
-                formats={["auto", "webp", "avif"]}
-                alt={siteTitle}
-                style={{ margin: 0 }}
-              />
-            </Link>
-          </div>
-          <ul class="navigation-bar">
-            <li>
-              <div class="navigation-bar-dropdown">
-              <Link to="/page-2" activeClassName="active" activeStyle={{color : "white" }}>
-              <span class="dropbtn">{"HOME"}</span>
+  <nav className="navbar navbar-expand-lg navbar-custom navbar-light" role="navigation" id="navigation-container">
+  <div className="container-fluid">
+      <a className="navbar-brand" href="#">
+        <StaticImage
+          src="../images/logo-icon.png"
+          width={300}
+          quality={95}
+          formats={["auto", "webp", "avif"]}
+          alt={siteTitle}
+          style={{ margin: 0 }}
+        />
+        Bootstrap
+      </a>
+      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon"></span>
+      </button>
+      <div className="navbar-collapse collapse" id="navbarNavDropdown" style={{color: `#ffed00`}} >
+        <ul className="navbar-nav">
+          <li className="nav-item">
+              <Link className="nav-link navigation-item active" aria-current="page" to="/page-2" >
+                {"HOME"}
               </Link>
-            </div></li>
-            <li><Link to="/page-2" activeClassName="active">
-              <span class="dropbtn">{"NEWS"}</span>
-            </Link></li>
-            <li><Link to="/page-2" activeClassName="active">
-              <span class="dropbtn">{"EDITORIAL"}</span>
-            </Link></li>
-            <li><Link to="/page-2" activeClassName="active">
-              <span class="dropbtn">{"ENTERTAINMENT"}</span>
-            </Link></li>
-            <li><Link to="/page-2" activeClassName="active">
-              <span class="dropbtn">{"ARTICLES"}</span>
-            </Link></li>
-            <li><Link to="/page-2" activeClassName="active">
-              <span class="dropbtn">{"CLASSIFIED ADS"}</span>
-            </Link></li>
-            <li>
-              <div class="navigation-bar-dropdown">
-              <a><span class="dropbtn">{"PAGES"}</span></a>
-              <div class="navigation-bar-dropdown-content">
-                <Link to="/page-2" activeClassName="active">Page 1</Link>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-              </div>
-              </div>
-            </li>
-        </ul>
-        
-      </div>
+          </li>
+          <li className=" nav-item">
+              <Link className="nav-link navigation-item" to="/page-2">
+                {"NEWS"}
+              </Link>
+          </li>
+          <li className="nav-item">
+              <Link className="nav-link navigation-item" to="/page-2">
+                {"EDITORIAL"}
+              </Link>
+          </li>
+          <li className="nav-item dropdown">
+            <a class="nav-link navigation-item" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown link
+            </a>
+            <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a className="dropdown-item" href="#">Action</a></li>
+              <li><a className="dropdown-item" href="#">Another action</a></li>
+              <li><a className="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+        </ul>   
+        </div>     
     </div>
+  </nav>
+      
+        
   </header>
 )
 
