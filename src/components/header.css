@@ -3,7 +3,7 @@
 }
 
 #navigation-container {
-	margin: 0 auto;
+	margin: 0 auto;                       
 }
 #navigation-container .navbar-nav { 
 	background: #E60B0F;
@@ -50,4 +50,12 @@
 	font-family: "Trebuchet MS", sans-serif, Arial, Helvetica;
 	text-decoration-style: solid;
 	border-bottom: 3px solid #ffed00;
+}
+
+.dropdown-menu {
+	background-color: #ffed00;
+	
+}
+.dropdown-item {
+	color: #E60B0F;
 }
