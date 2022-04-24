@@ -34,27 +34,37 @@ const Header = ({ logo, siteTitle }) => (
             </Link>
           </div>
           <ul class="navigation-bar">
-            <li><Link to="/page-2" activeClassName="active" activeStyle={{color : "white" }}>
-              <span>{"HOME"}</span>
+            <li>
+              <div class="navigation-bar-dropdown">
+              <Link to="/page-2" activeClassName="active" activeStyle={{color : "white" }}>
+              <span class="dropbtn">{"HOME"}</span>
+              </Link>
+            </div></li>
+            <li><Link to="/page-2" activeClassName="active">
+              <span class="dropbtn">{"NEWS"}</span>
             </Link></li>
             <li><Link to="/page-2" activeClassName="active">
-              <span>{"NEWS"}</span>
+              <span class="dropbtn">{"EDITORIAL"}</span>
             </Link></li>
             <li><Link to="/page-2" activeClassName="active">
-              <span>{"EDITORIAL"}</span>
+              <span class="dropbtn">{"ENTERTAINMENT"}</span>
             </Link></li>
             <li><Link to="/page-2" activeClassName="active">
-              <span>{"ENTERTAINMENT"}</span>
+              <span class="dropbtn">{"ARTICLES"}</span>
             </Link></li>
             <li><Link to="/page-2" activeClassName="active">
-              <span>{"ARTICLES"}</span>
+              <span class="dropbtn">{"CLASSIFIED ADS"}</span>
             </Link></li>
-            <li><Link to="/page-2" activeClassName="active">
-              <span>{"CLASSIFIED ADS"}</span>
-            </Link></li>
-            <li><Link to="/page-2" activeClassName="active">
-              <span>{"PAGES"}</span>
-            </Link></li>
+            <li>
+              <div class="navigation-bar-dropdown">
+              <a><span class="dropbtn">{"PAGES"}</span></a>
+              <div class="navigation-bar-dropdown-content">
+                <Link to="/page-2" activeClassName="active">Page 1</Link>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+              </div>
+              </div>
+            </li>
         </ul>
         
       </div>
