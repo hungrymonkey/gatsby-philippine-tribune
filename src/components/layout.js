@@ -8,6 +8,7 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import Header from "./header"
 import "./layout.css"
@@ -20,12 +21,24 @@ const Layout = ({ children }) => {
           title
         }
       }
+      allFile(filter: {name: {eq: "logo-icon"}}) {
+        edges {
+          node {
+            id
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+        }
+      }
     }
   `)
 
+  const logoimage = getImage(data.allFile.edges[0].node)
+  console.log(logoimage);
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      <Header logo={getImage(data.allFile.edges[0].node)} siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div
         style={{
           margin: `0 auto`,
