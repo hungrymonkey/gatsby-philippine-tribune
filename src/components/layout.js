@@ -41,6 +41,8 @@ const Layout = ({ children }) => {
       <Header logo={getImage(data.allFile.edges[0].node)} siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div
         style={{
+          backgroundColor: `white`,
+          backgroundImage: `white`,
           margin: `0 auto`,
           maxWidth: 960,
           padding: `0 1.0875rem 1.45rem`,

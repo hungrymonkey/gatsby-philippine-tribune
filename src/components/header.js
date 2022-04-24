@@ -47,7 +47,7 @@ const Header = ({ logo, siteTitle }) => (
               </Link>
           </li>
           <li className="nav-item dropdown">
-            <a class="nav-link navigation-item" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a className="nav-link navigation-item" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Dropdown link
             </a>
             <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
